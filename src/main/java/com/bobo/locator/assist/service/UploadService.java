@@ -21,10 +21,9 @@ public class UploadService {
     public void process(UploadRequest request, UploadResponse response){
         RouterData routerData = Logic.getDataFromString(request.getData());
 //        Message message = Logic.getMessageByUploadRequest(request);
-        String time = routerData.getTime();
         List<DeviceData> deviceDataList = routerData.getData();
-        uploadDao.addMessage(time, deviceDataList.get(0));
+        uploadDao.addMessage(routerData.getId(), routerData.getTime(), deviceDataList.get(0));
 //        response.setMsg("Uploaded message: "+message.toString()+".");
-        response.setMsg("Uploaded message at "+time+" .");
+        response.setMsg("Uploaded message at "+routerData.time+" .");
     }
 }
