@@ -17,7 +17,6 @@ public class Logic {
     public static RouterData getDataFromString(String s){
         Gson gson = new Gson();
         String prefix = "data=";
-        s = s.substring(prefix.length());
-        return gson.fromJson(s, RouterData.class);
+        return gson.fromJson(s.substring(prefix.length()), RouterData.class);
     }
 }

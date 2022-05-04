@@ -14,9 +14,16 @@ public class Router {
     private UploadService uploadService;
 
     @PostMapping("upload")
-    public Object upload(UploadRequest request){
+    public Object upload(@RequestBody String request){
         UploadResponse response = new UploadResponse();
         uploadService.process(request, response);
+        return response;
+    }
+
+    @PostMapping("testUpload")
+    public Object testUpload(@RequestBody String request){
+        UploadResponse response = new UploadResponse();
+        uploadService.testProcess(request, response);
         return response;
     }
 }

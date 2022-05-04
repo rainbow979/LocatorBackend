@@ -18,12 +18,15 @@ public class UploadService {
     @Autowired
     UploadDao uploadDao;
 
-    public void process(UploadRequest request, UploadResponse response){
-        RouterData routerData = Logic.getDataFromString(request.getData());
-//        Message message = Logic.getMessageByUploadRequest(request);
+    public void process(String request, UploadResponse response){
+        RouterData routerData = Logic.getDataFromString(request);
         List<DeviceData> deviceDataList = routerData.getData();
         uploadDao.addMessage(routerData.getId(), routerData.getTime(), deviceDataList.get(0));
-//        response.setMsg("Uploaded message: "+message.toString()+".");
         response.setMsg("Uploaded message at "+routerData.time+" .");
+    }
+
+    public void testProcess(String request, UploadResponse response){
+        uploadDao.testAdd();
+        response.setMsg("Test upload success.");
     }
 }

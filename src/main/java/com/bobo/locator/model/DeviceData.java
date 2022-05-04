@@ -4,24 +4,24 @@ public class DeviceData {
     public String mac;
     public String rssi;
     public String range;
-    public String ts;
-    public String tmc;
+//    public String ts;
+//    public String tmc;
 
-    public String getTs() {
-        return ts;
-    }
-
-    public void setTs(String ts) {
-        this.ts = ts;
-    }
-
-    public String getTmc() {
-        return tmc;
-    }
-
-    public void setTmc(String tmc) {
-        this.tmc = tmc;
-    }
+//    public String getTs() {
+//        return ts;
+//    }
+//
+//    public void setTs(String ts) {
+//        this.ts = ts;
+//    }
+//
+//    public String getTmc() {
+//        return tmc;
+//    }
+//
+//    public void setTmc(String tmc) {
+//        this.tmc = tmc;
+//    }
 
     public String getMac() {
         return mac;
