@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UploadDao {
     @Insert("insert into message " +
-            "(id, time, mac, rssi, range, ts, tmc) values " +
+            "(device_id, time, mac, rssi, distance) values " +
             "(#{id, jdbcType=VARCHAR}, " +
             "#{time, jdbcType=VARCHAR}, #{deviceData.mac, jdbcType=VARCHAR}, " +
             "#{deviceData.rssi, jdbcType=VARCHAR}, #{deviceData.range, jdbcType=VARCHAR})")
